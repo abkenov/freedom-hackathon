@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-box {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.results-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filters-box {
+  width: 30%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.accordion {
+  // margin-top: 1rem;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.search-button {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  padding-left: 1.4rem !important;
+}
+
+.accordion-stack {
+  margin-top: 1rem
+}
+
+.skeleton {
+  margin-top: 0.5rem;
+}
+
+.accordion-summary-form-group {
+  display: block !important;
+  width: 100%;
+
+  max-height: 20rem;
+  overflow-y: scroll;
+  overflow-x: clip;
+}
+
+.accordion-summary-form-group::-webkit-scrollbar {
+  width: 8px; /* Set scrollbar width */
+}
+
+.accordion-summary-form-group::-webkit-scrollbar-thumb {
+  // background-color: rgba(0, 0, 0, 0.3); /* Thumb color */
+  background-color: #2e7d32;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.accordion-summary-form-group::-webkit-scrollbar-track {
+  background-color: rgb(217, 216, 216);
+}
+
+.position-label {
+  border-bottom: 1px solid gray;
+  padding: 0.2rem 0;
+  width: 100%;
+}
+
+.company-label {
+  border-bottom: 1px solid gray;
+  padding: 0.2rem 0;
+  width: 100%;
+}
+
+.cv-card {
+  width: 100%;
+  min-height: 10rem;
+  margin: 1rem;
+}
+
+.chips {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.MuiTypography-root {
+  font-family: 'Montserrat', sans-serif !important;
+
+}
+
+.MuiCard-root {
+  box-shadow: 0px 5px 14px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.see-cv {
+  padding: 0.5rem;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
