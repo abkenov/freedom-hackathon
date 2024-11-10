@@ -258,7 +258,7 @@ const App: React.FC = () => {
   const { data: dataQuery, isLoading: isLoadingQuery } = useQuery({
     queryKey: ['searchResultsQuery'],
     queryFn: () => fetchResultsQuery(query),
-    enabled: query.length !== 0,
+    enabled: fetchQuery.length !== 0,
   });
 
   console.log(data);
@@ -322,15 +322,17 @@ const App: React.FC = () => {
   };
 
   async function handleSearchButton() {
-    alert(query);
+    // alert(query);
 
-    const r: any = await fetchResultsQuery(query);
-    // const json = await r.json();
+    // const r: any = await fetchResultsQuery(query);
+    // // const json = await r.json();
 
-    console.log(r);
+    // console.log(r);
 
-    setResults(r);
+    // setResults(r);
     // refetch();
+
+    setFetchQuery(query);
   }
 
   function handleExpInputChange(event: ChangeEvent<HTMLInputElement>) {
@@ -429,7 +431,7 @@ const App: React.FC = () => {
                 className: 'search-input',
                 endAdornment: (
                   <InputAdornment position='end'>
-                    {query.length > 0 ? <IconButton onClick={() => setQuery('')}><CloseIcon /></IconButton> : ''}
+                    {query.length > 0 ? <IconButton onClick={() => {setQuery(''); setFetchQuery('')}}><CloseIcon /></IconButton> : ''}
                   </InputAdornment>
                 )
               }
@@ -564,7 +566,7 @@ const App: React.FC = () => {
           <Box className="results-box">
             {(isLoading || isLoadingQuery)
               ? renderSkeletons()
-              : (query.length === 0 
+              : (fetchQuery.length === 0 
                 ? data?.map((cv: any) => 
               <Card className='cv-card' key={cv.url}>
                 <CardContent className='cv-card-content'>
