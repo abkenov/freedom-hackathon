@@ -295,7 +295,7 @@ const App: React.FC = () => {
   function handleQueryChange(event: ChangeEvent<HTMLInputElement>) {
     const q = event.target.value;
     setQuery(q);
-    setFetchQuery(q);
+    // setFetchQuery(q);
   };
 
 
